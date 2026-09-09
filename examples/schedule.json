@@ -1,0 +1,9 @@
+{
+  "senderEmail": "sender@ethereal.email",
+  "recipients": ["one@example.com", "two@example.com"],
+  "subject": "ReachInbox demo",
+  "body": "Hello from the scheduler",
+  "startTime": "2026-09-08T19:00:00.000Z",
+  "delayMs": 2000,
+  "hourlyLimit": 200
+}

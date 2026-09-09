@@ -1,18 +1,45 @@
-export type Email = {
+export type EmailStatus = "SCHEDULED" | "PROCESSING" | "SENT" | "FAILED";
+
+export interface Email {
   id: string;
+
   recipient: string;
+
   subject: string;
+
   body: string;
+
   scheduledAt: string;
-  sentAt?: string;
-  status: string;
-  lastError?: string;
-  sender: { email: string };
-};
-export type User = {
+
+  originalAt?: string;
+
+  sentAt?: string | null;
+
+  status: EmailStatus;
+
+  attempts: number;
+
+  lastError?: string | null;
+
+  sender?: string | null;
+}
+
+export interface User {
   id: string;
-  name: string;
+
   email: string;
-  avatar?: string;
-  slackConnection?: { id: string; teamName?: string };
-};
+
+  name: string;
+
+  avatar?: string | null;
+}
+
+export interface Sender {
+  id: string;
+
+  email: string;
+
+  displayName?: string | null;
+
+  hourlyLimit: number;
+}
